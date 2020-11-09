@@ -13,12 +13,11 @@ class CreateTodo extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.addTodo(this.state)
+    this.setState( { text: '', } )
   }
 
   handleChange(event) {
-    this.setState({
-      text: event.target.value
-    });
+    this.setState( { text: event.target.value } );
   }
 
   render() {
@@ -32,6 +31,7 @@ class CreateTodo extends Component {
      </div>
    );
   }
+
 };
 
 const mapDispatchToProps = dispatch => ({
